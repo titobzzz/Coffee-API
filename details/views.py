@@ -14,3 +14,18 @@ class ProfileViewSet(viewsets.ModelViewSet):
 
     queryset= profile.objects.all
     serializer_class = ProfileSerializer
+
+
+    def perform_create(self, request, *args, **kwargs):
+        serializer = ProfileSerializer(data=request.data)
+
+        if serializer.is_valid(raise_exception= True):
+            serializer.save()
+            response_data= {
+                "data":serializer.data,
+                "message":"Data created successfully"
+            }
+            return Response(response_data)
+       
+
+        
