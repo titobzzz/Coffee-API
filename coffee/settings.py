@@ -16,6 +16,8 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+PORT = int(os.environ.get('PORT', 8000))
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -25,7 +27,7 @@ SECRET_KEY = '4xnc&yo5!92dah0et!ns^jpragw%9ek1&yc4qd1z62659!)99v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['coffe_API.onrender.com', 'localhost']
 
 
 # Application definition
